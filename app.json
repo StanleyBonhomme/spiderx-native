@@ -1,0 +1,35 @@
+{
+	"expo": {
+		"name": "SpiderX",
+		"slug": "spiderX",
+		"ios": {
+			"bundleIdentifier": "com.spiderx.spiderxnative",
+			"buildNumber": "1.0.0",
+			"requireFullScreen": true
+		},
+		"android": {
+			"package": "com.spiderx.spiderxnative",
+			"versionCode": 1
+		},
+		"platforms": ["ios", "android", "web"],
+		"version": "1.0.0",
+		"orientation": "portrait",
+		"icon": "./app/assets/icon.png",
+		"splash": {
+			"image": "./app/assets/splash.png",
+			"resizeMode": "cover",
+			"backgroundColor": "#161620"
+		},
+		"updates": {
+			"fallbackToCacheTimeout": 0
+		},
+		"assetBundlePatterns": ["**/*"],
+		"ios": {
+			"supportsTablet": true
+		},
+		"androidStatusBar": {
+			"barStyle": "light-content",
+			"backgroundColor": "#161620"
+		}
+	}
+}
