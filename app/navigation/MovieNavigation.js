@@ -7,11 +7,11 @@ import PlayMovieScreen from "../screens/PlayMovieScreen";
 const Stack = createStackNavigator();
 
 export default () => (
-	<Stack.Navigator
-		initialRouteName="Movie"
-		screenOptions={{ headerShown: false }}
-	>
-		<Stack.Screen name="Movie" component={MovieScreen} />
-		<Stack.Screen name="PlayMovie" component={PlayMovieScreen} />
-	</Stack.Navigator>
+  <Stack.Navigator
+    initialRouteName="Movie"
+    screenOptions={{ headerShown: false }}
+  >
+    <Stack.Screen name="Movie" component={MovieScreen} />
+    <Stack.Screen name="PlayMovie" component={PlayMovieScreen} />
+  </Stack.Navigator>
 );

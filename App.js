@@ -11,39 +11,39 @@ import theme from "./app/config/theme";
 export const AuthContext = createContext("");
 
 export default () => {
-	console.disableYellowBox = true;
-	const [userToken, setUserToken] = useState("");
-	const [loading, setLoading] = useState(true);
+  console.disableYellowBox = true;
+  const [userToken, setUserToken] = useState("");
+  const [loading, setLoading] = useState(true);
 
-	useEffect(() => {
-		const getToken = async () => {
-			try {
-				const userToken = await AsyncStorage.getItem("userToken");
-				if (userToken !== null) {
-					setUserToken(userToken);
-				}
-			} catch (err) {
-				console.log(err);
-			}
-		};
+  useEffect(() => {
+    const getToken = async () => {
+      try {
+        const userToken = await AsyncStorage.getItem("userToken");
+        if (userToken !== null) {
+          setUserToken(userToken);
+        }
+      } catch (err) {
+        console.log(err);
+      }
+    };
 
-		getToken();
-		setLoading(false);
-	});
+    getToken();
+    setLoading(false);
+  });
 
-	const [fontsLoaded] = useFonts({
-		Poppins: require("./app/assets/fonts/Poppins.otf")
-	});
+  const [fontsLoaded] = useFonts({
+    Poppins: require("./app/assets/fonts/Poppins.otf"),
+  });
 
-	if (loading || !fontsLoaded) return <AppLoading />;
+  if (loading || !fontsLoaded) return <AppLoading />;
 
-	return (
-		<ThemeProvider theme={theme}>
-			<AuthContext.Provider value={{ userToken, setUserToken }}>
-				<NavigationContainer>
-					{userToken ? <RootNavigation /> : <AuthNavigation />}
-				</NavigationContainer>
-			</AuthContext.Provider>
-		</ThemeProvider>
-	);
+  return (
+    <ThemeProvider theme={theme}>
+      <AuthContext.Provider value={{ userToken, setUserToken }}>
+        <NavigationContainer>
+          {userToken ? <RootNavigation /> : <AuthNavigation />}
+        </NavigationContainer>
+      </AuthContext.Provider>
+    </ThemeProvider>
+  );
 };

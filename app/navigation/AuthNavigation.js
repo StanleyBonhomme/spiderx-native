@@ -8,12 +8,12 @@ import SignupScreen from "../screens/SignupScreen";
 const Stack = createStackNavigator();
 
 export default () => (
-	<Stack.Navigator
-		initialRouteName="Join"
-		screenOptions={{ headerShown: false }}
-	>
-		<Stack.Screen name="Join" component={AuthScreen} />
-		<Stack.Screen name="Login" component={LoginScreen} />
-		<Stack.Screen name="Signup" component={SignupScreen} />
-	</Stack.Navigator>
+  <Stack.Navigator
+    initialRouteName="Join"
+    screenOptions={{ headerShown: false }}
+  >
+    <Stack.Screen name="Join" component={AuthScreen} />
+    <Stack.Screen name="Login" component={LoginScreen} />
+    <Stack.Screen name="Signup" component={SignupScreen} />
+  </Stack.Navigator>
 );
